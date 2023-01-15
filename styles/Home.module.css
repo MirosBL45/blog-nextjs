@@ -1,10 +1,13 @@
 .main {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
 .description {
@@ -170,6 +173,18 @@
 
   .card:hover span {
     transform: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: 1fr;
   }
 }
 
