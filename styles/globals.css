@@ -100,3 +100,36 @@ a {
     color-scheme: dark;
   }
 }
+
+.mainHeading {
+  color: rgb(160, 182, 179);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 6rem 2rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(160, 182, 179);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer_description {
+  padding: 1rem 0.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer_description a {
+  transition: 0.27s;
+  text-decoration: none;
+  color: hsl(195, 53%, 71%);
+}
+
+.footer_description a:hover {
+  color: hsl(195, 53%, 51%)
+}

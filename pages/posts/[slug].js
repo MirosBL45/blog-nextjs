@@ -1,6 +1,8 @@
 import styles from '../../styles/Slug.module.css';
 import { GraphQLClient, gql } from 'graphql-request';
 import Link from 'next/link';
+import Footer from '../../components/Footer';
+import Contact from '../../components/Contact';
 
 const graphcms = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clcs6pcji127t01t94ow29bx4/master'
@@ -61,33 +63,38 @@ export async function getStaticProps({ params }) {
 
 export default function BlogPost({ post }) {
   return (
-    <main className={styles.blog}>
-      <div className={styles.goHomeContainer}>
-        <Link className={styles.goHome} href={'/'}>
-          <p>
-            <span>Go home</span>
-          </p>
-        </Link>
-      </div>
-      <img
-        src={post.coverPhoto.url}
-        className={styles.cover}
-        alt={post.title}
-      />
-      <div className={styles.title}>
-        <div className={styles.authdetails}>
-          <img src={post.author.avatar.url} alt={post.author.name} />
-          <div className={styles.authtext}>
-            <h6>By {post.author.name}</h6>
-            <h6 className={styles.date}>{post.datePublished}</h6>
-          </div>
+    <>
+      <main className={styles.blog}>
+        <div className={styles.goHomeContainer}>
+          <Link className={styles.goHome} href={'/'}>
+            <p>
+              <span>Go home</span>
+            </p>
+          </Link>
         </div>
-        <h2>{post.title}</h2>
-      </div>
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{ __html: post.content.html }}
-      ></div>
-    </main>
+        <img
+          src={post.coverPhoto.url}
+          className={styles.cover}
+          alt={post.title}
+          title={post.title}
+        />
+        <div className={styles.title}>
+          <div className={styles.authdetails}>
+            <img src={post.author.avatar.url} alt={post.author.name} />
+            <div className={styles.authtext}>
+              <h6>By {post.author.name}</h6>
+              <h6 className={styles.date}>{post.datePublished}</h6>
+            </div>
+          </div>
+          <h2>{post.title}</h2>
+        </div>
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{ __html: post.content.html }}
+        ></div>
+      </main>
+      <Contact />
+      <Footer />
+    </>
   );
 }
