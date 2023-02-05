@@ -6,7 +6,7 @@
 
 .tac {
   text-align: center;
-  color: #ccc;
+  color: rgb(46, 46, 46);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 1.5px;
   margin-bottom: 20px;
@@ -76,8 +76,8 @@
 }
 
 .btn_primary {
-  color: #fff;
-  background: #007bff;
+  color: hsl(89, 49%, 73%);
+  background: #008a00;
 }
 
 @media only screen and (max-width: 683px) {

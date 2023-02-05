@@ -3,13 +3,15 @@
   border-radius: 2rem;
   overflow: hidden;
   box-shadow: 15px 20px 40px rgba(216, 211, 211, 0.4);
-  background: lightgreen;
+  background: #6757e2;
+  color: #e0dcdc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .card h2 {
   padding: 0.5rem 0rem;
 }
 .card h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 /* .imgContainer {
