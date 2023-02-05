@@ -79,3 +79,19 @@
   color: #fff;
   background: #007bff;
 }
+
+@media only screen and (max-width: 683px) {
+  .formControl input, .formControl textarea {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .formControl input[type="text"], .formControl input[type="email"] {
+    width: 100%;
+  }
+}

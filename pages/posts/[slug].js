@@ -65,13 +65,13 @@ export default function BlogPost({ post }) {
   return (
     <>
       <main className={styles.blog}>
-        <div className={styles.goHomeContainer}>
+        {/* <div className={styles.goHomeContainer}>
           <Link className={styles.goHome} href={'/'}>
             <p>
               <span>Go home</span>
             </p>
           </Link>
-        </div>
+        </div> */}
         <img
           src={post.coverPhoto.url}
           className={styles.cover}
@@ -94,6 +94,13 @@ export default function BlogPost({ post }) {
         ></div>
       </main>
       <Contact />
+      <div className={styles.bottomGoHomeContainer}>
+        <Link className={styles.bottomGoHome} href={'/'}>
+          <p>
+            <span>Go home</span>
+          </p>
+        </Link>
+      </div>
       <Footer />
     </>
   );

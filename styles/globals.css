@@ -133,3 +133,13 @@ footer {
 .footer_description a:hover {
   color: hsl(195, 53%, 51%)
 }
+
+.first {
+  margin-bottom: 1.5rem;
+}
+
+@media only screen and (max-width: 683px) {
+  footer {
+    font-size: 0.7rem;
+  }
+}
