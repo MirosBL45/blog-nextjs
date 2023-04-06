@@ -3,6 +3,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 import Link from 'next/link';
 import Footer from '../../components/Footer';
 import Contact from '../../components/Contact';
+import { useRouter } from 'next/router';
 
 const graphcms = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clcs6pcji127t01t94ow29bx4/master'
@@ -62,6 +63,11 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPost({ post }) {
+  const router = useRouter();
+  function handleGoBack() {
+    router.back();
+  }
+
   return (
     <>
       <main className={styles.blog}>
@@ -95,11 +101,14 @@ export default function BlogPost({ post }) {
       </main>
       <Contact />
       <div className={styles.bottomGoHomeContainer}>
-        <Link className={styles.bottomGoHome} href={'/'}>
+          <button onClick={handleGoBack} className={styles.bottomGoHome}>
+            <span>Go home</span>
+          </button>
+        {/* <Link className={styles.bottomGoHome} href={'/'}>
           <p>
             <span>Go home</span>
           </p>
-        </Link>
+        </Link> */}
       </div>
       <Footer />
     </>
