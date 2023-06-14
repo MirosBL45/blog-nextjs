@@ -101,14 +101,14 @@ export default function BlogPost({ post }) {
       </main>
       <Contact />
       <div className={styles.bottomGoHomeContainer}>
-          <button onClick={handleGoBack} className={styles.bottomGoHome}>
+        {/* <button onClick={handleGoBack} className={styles.bottomGoHome}>
             <span>Go home</span>
-          </button>
-        {/* <Link className={styles.bottomGoHome} href={'/'}>
+          </button> */}
+        <Link className={styles.bottomGoHome} href={'/'}>
           <p>
             <span>Go home</span>
           </p>
-        </Link> */}
+        </Link>
       </div>
       <Footer />
     </>

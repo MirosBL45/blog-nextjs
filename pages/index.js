@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 import { GraphQLClient, gql } from 'graphql-request';
 import BlogCard from '../components/BlogCard';
 import Footer from '../components/Footer';
+import { useState, useMemo } from 'react';
 
 const graphcms = new GraphQLClient(
   'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clcs6pcji127t01t94ow29bx4/master'
@@ -46,6 +47,18 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  //   const [items, setItems] = useState([]);
+  //   const [query, setQuery] = useState("");
+
+  //   setItems(posts.title);
+  //   console.log(items);
+
+  // const filteredItems = useMemo(() => {
+  //   return items.filter(item => {
+  //     return item.toLowerCase().includes(query.toLowerCase())
+  //   })
+  // }, [items, query])
+
   return (
     <>
       <Head>
@@ -77,8 +90,11 @@ export default function Home({ posts }) {
       </Head>
 
       <h1 className="mainHeading">Welcome to our blog</h1>
+      {/* Search: <input type="search" value={query}
+        onChange={e => setQuery(e.target.value)} /> */}
       <main className={styles.main}>
         {posts.map((post) => (
+          // {filteredItems.map((post) => (
           <BlogCard
             key={post.id}
             {...post}
