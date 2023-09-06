@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import styles from '../styles/ContactForm.module.css';
-import emailjs from '@emailjs/browser';
+import React, { useRef } from "react";
+import styles from "../styles/ContactForm.module.css";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const form = useRef();
@@ -9,14 +9,15 @@ function Contact() {
     e.preventDefault();
     emailjs
       .sendForm(
-        'service_i3rs6cc',
-        'template_oonxz7s',
+        "service_i3rs6cc",
+        "template_oonxz7s",
         form.current,
-        'o2jP32BE4AwKYKPs8'
+        "o2jP32BE4AwKYKPs8"
       )
       .then(
         (result) => {
           console.log(result.text);
+          alert("Thank you. I will get back to you as soon as possible.");
         },
         (error) => {
           console.log(error.text);
@@ -32,7 +33,7 @@ function Contact() {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className={[styles.formControl, styles.card].join(' ')}
+          className={[styles.formControl, styles.card].join(" ")}
         >
           <div className="inputs">
             <div className="namemail">
@@ -58,7 +59,7 @@ function Contact() {
             placeholder="Write your message here"
           ></textarea>
           <button
-            className={[styles.btn, styles.btn_primary].join(' ')}
+            className={[styles.btn, styles.btn_primary].join(" ")}
             type="submit"
           >
             Send Message
